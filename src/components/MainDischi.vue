@@ -1,7 +1,7 @@
 <template>
-  <main class="bg-primary py-5">
+  <main class="py-5">
     <div class="container-sm container-md container-xl">
-      <div class="row">
+      <div class="row justify-content-center">
         <card-disco
           v-for="disco in arrDischi"
           :key="disco.title"
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main {
-  height: calc(100vh - 7rem);
-}
+// main {
+//   height: calc(100vh - 5rem);
+// }
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <img :src="discoData.poster" :alt="discoData.title">
-    <h3>{{ discoData.title }}</h3>
-    <span>{{ discoData.author }}</span>
-    <span>{{ discoData.year }}</span>
+  <div class="bg-secondary text-center col-sm-12 col-md-3 col-xl-2 mx-2 p-3 gy-3">
+    <img class="w-100" :src="discoData.poster" :alt="discoData.title">
+    <h5 class="text-white text-uppercase">{{ discoData.title }}</h5>
+    <h6>{{ discoData.author }}</h6>
+    <h6>{{ discoData.year }}</h6>
   </div>
 </template>
 
@@ -17,5 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+h6 {
+  color: #787b7f;
+}
 </style>

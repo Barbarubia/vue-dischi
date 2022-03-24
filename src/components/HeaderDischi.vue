@@ -12,6 +12,6 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  height: 7rem;
+  height: 5rem;
 }
 </style>
