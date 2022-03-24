@@ -22,4 +22,8 @@ export default {
 $primary: #1e2d3b;
 $secondary: #2e3a46;
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+html {
+  background-color: $primary;
+}
 </style>
