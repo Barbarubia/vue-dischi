@@ -1,6 +1,6 @@
 <template>
-  <main>
-    ciao
+  <main class="bg-primary">
+
   </main>
 </template>
 
@@ -11,5 +11,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+main {
+  height: calc(100vh - 7rem);
+}
 </style>
