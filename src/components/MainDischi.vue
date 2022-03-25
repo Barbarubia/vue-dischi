@@ -3,6 +3,8 @@
     <div class="container-sm container-md container-xl">
       <div v-if="arrDischi == null" class="row bg-secondary justify-content-center text-center dd_splashpage p-5">
         <img src="../assets/img/loading.gif" alt="loading">
+        <!-- Icona da usare dopo aver importato font awesome -->
+        <!-- <i class="fa-solid fa-compact-disc"></i> -->
         <h1 class="text-white mt-5">Download Tracks...</h1>
       </div>
       <div v-else class="row justify-content-center">
