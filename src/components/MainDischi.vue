@@ -9,7 +9,7 @@
       </div>
       <div v-else class="row justify-content-center">
         <card-disco
-          v-for="disco in arrDischi"
+          v-for="disco in filterGenre()"
           :key="disco.title"
           :disco-data="disco"
         />
@@ -24,13 +24,22 @@ import axios from 'axios'
 
 export default {
   name: 'MainDischi',
+  filteredDischi: '',
+  components: {
+    CardDisco
+  },
+  props: {
+    stringaFiltro: String
+  },
   data () {
     return {
       arrDischi: null
     }
   },
-  components: {
-    CardDisco
+  methods: {
+    filterGenre () {
+      return this.arrDischi.filter(disco => disco.genre.includes(this.stringaFiltro))
+    }
   },
   created () {
     setTimeout(() => {

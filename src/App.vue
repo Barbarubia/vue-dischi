@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="bg-primary">
-    <header-dischi />
-    <main-dischi />
+    <header-dischi @sendSelectedGenre="setSelectedGenre" />
+    <main-dischi :stringa-filtro="selectedGenre"/>
   </div>
 </template>
 
@@ -14,6 +14,16 @@ export default {
   components: {
     HeaderDischi,
     MainDischi
+  },
+  data () {
+    return {
+      selectedGenre: ''
+    }
+  },
+  methods: {
+    setSelectedGenre (genre) {
+      this.selectedGenre = genre
+    }
   }
 }
 </script>

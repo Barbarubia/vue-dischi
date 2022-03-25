@@ -1,17 +1,26 @@
 <template>
   <header class="bg-secondary d-flex justify-content-between px-5 py-3">
     <a href="#"><img class="h-100" src="../assets/img/logo.png" alt="logo"></a>
-    <filter-tracks class="align-self-center" />
+    <div class="align-self-center">
+    <select @change="$emit('sendSelectedGenre', selectedGenre($event))" name="filter-genre" id="filter-genre">
+      <option value="">Seleziona un genere</option>
+      <option value="Rock">Rock</option>
+      <option value="Pop">Pop</option>
+      <option value="Jazz">Jazz</option>
+      <option value="Metal">Metal</option>
+    </select>
+  </div>
   </header>
 </template>
 
 <script>
-import FilterTracks from './FilterTracks.vue'
-
 export default {
   name: 'HeaderDischi',
-  components: {
-    FilterTracks
+  methods: {
+    selectedGenre (event) {
+      // console.log(event.target.value)
+      return event.target.value
+    }
   }
 }
 </script>
