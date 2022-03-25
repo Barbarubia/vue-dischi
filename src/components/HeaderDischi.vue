@@ -17,9 +17,9 @@
 export default {
   name: 'HeaderDischi',
   methods: {
-    selectedGenre (event) {
-      // console.log(event.target.value)
-      return event.target.value
+    selectedGenre (option) {
+      // console.log(option.target.value)
+      return option.target.value
     }
   }
 }
