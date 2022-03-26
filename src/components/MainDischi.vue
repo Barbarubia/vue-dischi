@@ -38,7 +38,11 @@ export default {
   },
   methods: {
     filterGenre () {
-      return this.arrDischi.filter(disco => disco.genre.includes(this.stringaFiltro))
+      if (this.stringaFiltro === '') {
+        return this.arrDischi
+      } else {
+        return this.arrDischi.filter(disco => disco.genre === this.stringaFiltro)
+      }
     }
   },
   created () {
@@ -47,7 +51,7 @@ export default {
         .then((risposta) => {
           // console.log(risposta)
           this.arrDischi = risposta.data.response
-          // onsole.log(this.arrDischi)
+          // console.log(this.arrDischi)
         })
     }, 3000)
   }
