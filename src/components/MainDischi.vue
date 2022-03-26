@@ -2,9 +2,8 @@
   <main class="py-5">
     <div class="container-sm container-md container-xl">
       <div v-if="arrDischi == null" class="row bg-secondary justify-content-center text-center dd_splashpage p-5">
-        <img src="../assets/img/loading.gif" alt="loading">
-        <!-- Icona da usare dopo aver importato font awesome -->
-        <!-- <i class="fa-solid fa-compact-disc"></i> -->
+        <!-- <img src="../assets/img/loading.gif" alt="loading"> -->
+        <font-awesome-icon icon="fa-solid fa-compact-disc" class="dd_disco text-white" spin />
         <h1 class="text-white mt-5">Download Tracks...</h1>
       </div>
       <div v-else class="row justify-content-center">
@@ -62,7 +61,7 @@ export default {
 // main {
 //   height: calc(100vh - 5rem);
 // }
-.dd_splashpage img {
-  width: 200px;
+.dd_splashpage .dd_disco {
+  font-size: 200px;
 }
 </style>
