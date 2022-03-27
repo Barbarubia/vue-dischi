@@ -6,7 +6,7 @@
         <input @keyup="$emit('sendInputAuthor', searchText)" v-model="searchText" type="text" name="filter-author" id="filter-author" placeholder="Search by author">
       </label>
       <select @change="$emit('sendSelectedGenre', selectedGenre($event))" name="filter-genre" id="filter-genre">
-        <option value="">Select a genre</option>
+        <option value="" selected>Select a genre</option>
         <option value="Rock">Rock</option>
         <option value="Pop">Pop</option>
         <option value="Jazz">Jazz</option>
