@@ -1,6 +1,6 @@
 <template>
 <div class="d-flex align-items-stretch">
-  <div class=" w-100 bg-secondary text-center p-3">
+  <div class="w-100 bg-secondary text-center p-3">
     <img class="w-100" :src="discoData.poster" :alt="discoData.title">
     <h5 class="text-white text-uppercase">{{ discoData.title }}</h5>
     <h6>{{ discoData.author }}</h6>

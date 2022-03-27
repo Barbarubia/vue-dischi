@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="bg-primary">
-    <header-dischi @sendSelectedGenre="setSelectedGenre" />
-    <main-dischi :stringa-filtro="selectedGenre"/>
+    <header-dischi @sendSelectedGenre="setSelectedGenre" @sendInputAuthor="searchInputAuthor" />
+    <main-dischi :string-filter-genre="selectedGenre" :string-input-author="inputAuthor"/>
   </div>
 </template>
 
@@ -17,12 +17,16 @@ export default {
   },
   data () {
     return {
-      selectedGenre: ''
+      selectedGenre: '',
+      inputAuthor: ''
     }
   },
   methods: {
     setSelectedGenre (genre) {
       this.selectedGenre = genre
+    },
+    searchInputAuthor (searchText) {
+      this.inputAuthor = searchText
     }
   }
 }
