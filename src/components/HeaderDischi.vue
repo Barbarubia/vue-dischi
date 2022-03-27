@@ -37,4 +37,10 @@ export default {
 header {
   height: 7rem;
 }
+
+input, select {
+  height: 2rem;
+  padding-left: .5rem;
+  margin-left: 1rem;
+}
 </style>

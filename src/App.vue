@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="bg-primary">
-    <header-dischi @sendSelectedGenre="setSelectedGenre" @sendInputAuthor="searchInputAuthor" />
+    <header-dischi @sendSelectedGenre="setSelectedGenre" @sendInputAuthor="searchInputAuthor"/>
     <main-dischi :string-filter-genre="selectedGenre" :string-input-author="inputAuthor"/>
   </div>
 </template>
