@@ -6,7 +6,7 @@
         <font-awesome-icon icon="fa-solid fa-compact-disc" class="dd_disco text-white" spin />
         <h1 class="text-white mt-5">Download Tracks...</h1>
       </div>
-      <div v-else class="row justify-content-center">
+      <div v-else class="row row-cols-sm-1 row-cols-md-3 row-cols-xl-5 g-3">
         <card-disco
           v-for="disco in filterGenre()"
           :key="disco.title"
