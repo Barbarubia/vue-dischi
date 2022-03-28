@@ -7,10 +7,7 @@
       </label>
       <select @change="$emit('sendSelectedGenre', selectedGenre($event))" name="filter-genre" id="filter-genre">
         <option value="" selected>Select a genre</option>
-        <option value="Rock">Rock</option>
-        <option value="Pop">Pop</option>
-        <option value="Jazz">Jazz</option>
-        <option value="Metal">Metal</option>
+        <option v-for="genre in genresOptions" :key="genre" :value="genre">{{ genre }}</option>
       </select>
     </div>
   </header>
@@ -19,6 +16,9 @@
 <script>
 export default {
   name: 'HeaderDischi',
+  props: {
+    genresOptions: Array
+  },
   data () {
     return {
       searchText: ''

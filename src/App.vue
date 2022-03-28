@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="bg-primary">
-    <header-dischi @sendSelectedGenre="setSelectedGenre" @sendInputAuthor="searchInputAuthor"/>
-    <main-dischi :string-filter-genre="selectedGenre" :string-input-author="inputAuthor"/>
+    <header-dischi @sendSelectedGenre="setSelectedGenre" @sendInputAuthor="searchInputAuthor" :genres-options="arrGenres"/>
+    <main-dischi @send-data="setArrData" :string-filter-genre="selectedGenre" :string-input-author="inputAuthor"/>
   </div>
 </template>
 
@@ -18,10 +18,20 @@ export default {
   data () {
     return {
       selectedGenre: '',
-      inputAuthor: ''
+      inputAuthor: '',
+      arrDischi: []
+    }
+  },
+  computed: {
+    arrGenres () {
+      console.log([...new Set(this.arrDischi.map(element => element.genre))])
+      return [...new Set(this.arrDischi.map(element => element.genre))]
     }
   },
   methods: {
+    setArrData (arrDischiPassato) {
+      this.arrDischi = arrDischiPassato
+    },
     setSelectedGenre (genre) {
       this.selectedGenre = genre
     },

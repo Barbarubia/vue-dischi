@@ -55,6 +55,7 @@ export default {
           // console.log(risposta)
           this.arrDischi = risposta.data.response
           // console.log(this.arrDischi)
+          this.$emit('send-data', this.arrDischi)
         })
     }, 3000)
   }
