@@ -7,7 +7,7 @@
       </div>
       <div v-else class="row row-cols-sm-1 row-cols-md-3 row-cols-xl-5 g-3">
         <card-disco
-          v-for="disco in filterGenre()"
+          v-for="disco in filterDisco()"
           :key="disco.title"
           :disco-data="disco"
         />
@@ -36,7 +36,7 @@ export default {
     }
   },
   methods: {
-    filterGenre () {
+    filterDisco () {
       if (this.stringFilterGenre === '' && this.stringInputAuthor === '') {
         return this.arrDischi
       } else if (this.stringFilterGenre !== '' && this.stringInputAuthor === '') {
