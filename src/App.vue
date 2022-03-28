@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     arrGenres () {
-      console.log([...new Set(this.arrDischi.map(element => element.genre))])
+      // console.log([...new Set(this.arrDischi.map(element => element.genre))])
       return [...new Set(this.arrDischi.map(element => element.genre))]
     }
   },
