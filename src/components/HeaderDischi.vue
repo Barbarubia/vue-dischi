@@ -5,10 +5,11 @@
       <label for="filter-author">
         <input @keyup="$emit('sendInputAuthor', searchText)" v-model="searchText" type="text" name="filter-author" id="filter-author" placeholder="Search by author">
       </label>
-      <select @change="$emit('sendSelectedGenre', selectedGenre($event))" name="filter-genre" id="filter-genre">
+      <select @change="$emit('sendSelectedGenre', selectedOptionGenre)" v-model="selectedOptionGenre" name="filter-genre" id="filter-genre">
         <option value="" selected>Select a genre</option>
         <option v-for="genre in genresOptions" :key="genre" :value="genre">{{ genre }}</option>
       </select>
+      <button @click="resetFilters">Reset filters</button>
     </div>
   </header>
 </template>
@@ -21,13 +22,16 @@ export default {
   },
   data () {
     return {
-      searchText: ''
+      searchText: '',
+      selectedOptionGenre: ''
     }
   },
   methods: {
-    selectedGenre (option) {
-      // console.log(option.target.value)
-      return option.target.value
+    resetFilters () {
+      this.searchText = ''
+      this.selectedOptionGenre = ''
+      this.$emit('sendInputAuthor', this.searchText)
+      this.$emit('sendSelectedGenre', this.selectedOptionGenre)
     }
   }
 }
@@ -38,9 +42,9 @@ header {
   height: 7rem;
 }
 
-input, select {
+input, select, button {
   height: 2rem;
-  padding-left: .5rem;
+  padding: 0 1rem;
   margin-left: 1rem;
 }
 </style>
